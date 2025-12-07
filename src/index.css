@@ -6,10 +6,13 @@
 :root {
   --bg-color: #05050c;
   --br: 10px;
-  --color-2: #0f1021;
-  --color-3: #bff473;
+  --dark-blue: #0f1021;
+  --green: #bff473;
+  --light-green:#bef4737f;
   --color-4: #6a6d9e;
   --color-border: hsla(0, 0%, 100%, .1);
+  --white:#fff;
+  --light-gray : #b0b0b1;
 }
 *{
   margin: 0;
@@ -43,5 +46,5 @@ button , input{
 html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100%;  /* ← بسیار مهم */
+  height: 100vh;  /* ← بسیار مهم */
 }

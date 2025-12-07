@@ -45,7 +45,7 @@
 content: "";
 width: 8px;
 height: 2px;
-background-color: #bede90;
+background-color: #d0eaab;
 position: absolute;
 animation:  move 5s infinite;
 border-radius: 5px;
@@ -53,10 +53,10 @@ border-radius: 5px;
 }
 @keyframes move {
     0%{
-        transform: translateX(0);
+        transform: translateX(-500px);
     }
     100%{
-        transform: translateX(500px);
+        transform: translateX(20px);
     }
 }
 
