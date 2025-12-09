@@ -1,74 +1,13 @@
 import './Sidebar.css'
+import { useState } from 'react'
 import { SvgLogo } from '../icons/SvgLogo'
 import { SvgPlus } from '../icons/SvgPlus'
-import { SvgDashboard } from '../icons/SvgDashboard'
-import { useState } from 'react'
-import { SvgUsers } from '../icons/SvgUsers'
-import { SvgSetting } from '../icons/SvgSetting'
-import { SvgMap } from '../icons/SvgMap'
-import { SvgApp } from '../icons/SvgApp'
+import { menu } from '../constants/layout-const'
+import { ProfileSidebar } from './ProfileSidebar'
+import { ThemeSidebar } from './ThemeSisebar'
 export const Sidebar = ({ handleSidbar }) => {
     const [subMenu, setSubMenu] = useState(-1)
-    const menu = [
-        {
-            title: "داشبورد",
-            icon: <SvgDashboard />,
-            subMenu :[
-                {
-                    title:"چارت ها",
 
-                },
-                 {
-                    title:"چارت ها",
-
-                },
-            ]
-        },
-        {
-            title: " اپلیکیشن",
-            icon: <SvgApp />,
-            subMenu :[
-                {
-                    title:"چارت ها",
-
-                },
-                 {
-                    title:"چارت ها",
-
-                },
-            ]
-        },
-        {
-            title: "نقشه",
-            icon: <SvgMap />,
-            subMenu :[
-                {
-                    title:"چارت ها",
-
-                },
-            ]
-        },
-        {
-            title: "کاربران",
-            icon: <SvgUsers />,
-            subMenu :[
-                {
-                    title:"چارت ها",
-
-                },
-            ]
-        },
-          {
-            title: "تنظیمات",
-            icon: <SvgSetting />,
-            subMenu :[
-                {
-                    title:"چارت ها",
-
-                },
-            ]
-        },
-    ]
 
     const handleSubMenu = (index) => {
 
@@ -95,19 +34,57 @@ export const Sidebar = ({ handleSidbar }) => {
                     </button>
                     <ul>
                         {menu.map((item, index) => (
-                            <li  key={index} className={`sidebar-center-item ${subMenu == index && 'sidebar-center-item-active'}`}>
+                            <li key={index} className={`sidebar-center-item ${subMenu == index && 'sidebar-center-item-active'}`}>
                                 <button onClick={() => handleSubMenu(index)}>
                                     {item.icon}
                                     <span> {item.title}</span>
                                 </button>
-                                <div className='sidebar-center-item-subMenu '></div>
+                                {item.subMenu &&
+                                    <>
+                                        <SubMenu list={item.subMenu} />
+                                        <SideMenu list={item.subMenu} />
+                                    </>}
                             </li>
 
                         ))}
                     </ul>
+                    {handleSidbar == false &&
+                        <>
+                            <ProfileSidebar />
+                            <ThemeSidebar />
+
+                        </>}
                 </div>
 
             </div>
         </>
+    )
+}
+
+export const SubMenu = ({ list }) => {
+    return (
+        <div className='sidebar-center-item-subMenu '>
+            {list.map((item, index) => (
+
+                <div key={index} className="submenu">{item.title}</div>
+            )
+
+            )}
+
+        </div>
+    )
+}
+
+export const SideMenu = ({ list }) => {
+    return (
+        <div className='sidebar-center-item-sidemenu '>
+            {list.map((item, index) => (
+
+                <div key={index} className="submenu">{item.title}</div>
+            )
+
+            )}
+
+        </div>
     )
 }

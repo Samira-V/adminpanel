@@ -9,7 +9,7 @@
   --dark-blue: #0f1021;
   --green: #bff473;
   --light-green:#bef4737f;
-  --color-4: #6a6d9e;
+  --color-purple: #6a6d9e;
   --color-border: hsla(0, 0%, 100%, .1);
   --white:#fff;
   --light-gray : #b0b0b1;
@@ -35,10 +35,10 @@ body {
   place-items: center;
   width: 100%;
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   font-family: "iranSans";
   direction: rtl;
-  /* background-color: var(--bg-color); */
+  background-color: var(--bg-color);
 }
 button , input{
   font-family: "iranSans";
@@ -46,5 +46,5 @@ button , input{
 html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100vh;  /* ← بسیار مهم */
+  /* height: 100vh;  ← بسیار مهم */
 }
