@@ -1,14 +1,15 @@
-import imageProfile from './../assets/media/profile.jpg'
-export const ProfileSidebar = ()=>{
+// import ImgProfile from '../assets/media/profile.jpg'
+
+export const ProfileSideBar=()=>{
     return(
         <>
-        <div className="sidebar-profile">
-            <div className="sidebar-profile-inner">
-                <div className="profile-sidebar-top">
-                    <img src={imageProfile} alt="profile" />
-                    <div>
-                        <span>سمیرا وعیدی</span>
-                        <span>@samiraCoder</span>
+        <div className="sideBar-profile">
+            <div className="sideBar-profile-inner">
+                <div className="sideBar-profile-top">
+                    {/* <img src={ImgProfile} alt='profile' /> */}
+                    <div >
+                        <span> سمیرا وعیدی</span>
+                        <span>@samiraDev</span>
                     </div>
                 </div>
                 <button>ویرایش پروفایل</button>

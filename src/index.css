@@ -1,30 +1,29 @@
 @font-face {
-  font-family: "iranSans";
-  src: url("./assets/fonts/Iranian\ Sans.ttf");
+  font-family:'iranSans' ;
+  src: url('./assets/fonts/IRANSans.woff');
+}
+
+* {
+  box-sizing: border-box;
 }
 
 :root {
-  --bg-color: #05050c;
-  --br: 10px;
-  --dark-blue: #0f1021;
-  --green: #bff473;
-  --light-green:#bef4737f;
-  --color-purple: #6a6d9e;
-  --color-border: hsla(0, 0%, 100%, .1);
-  --white:#fff;
-  --light-gray : #b0b0b1;
+  --color-1:#05050c ;
+  --color-2:#0f1021 ;
+  --color-3:#bff474 ;
+  --color-4:#242534 ;
+  --color-5:#6a6d9e ;
+  --color-6:#fff ;
+  --color-7:#b0b0b1 ;
+  --color-8:#bff47475 ;
+  --br:12px;
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
-
 a:hover {
   color: #535bf2;
 }
@@ -33,18 +32,13 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  width: 100%;
   min-width: 320px;
-  /* min-height: 100vh; */
-  font-family: "iranSans";
+  min-height: 100vh;
+  font-family: 'iranSans';
   direction: rtl;
-  background-color: var(--bg-color);
+  overflow-y: scroll;
 }
-button , input{
-  font-family: "iranSans";
-}
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  /* height: 100vh;  ← بسیار مهم */
+
+button , input {
+  font-family: 'iranSans' !important;
 }

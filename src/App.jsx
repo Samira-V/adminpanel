@@ -1,25 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { PanelLayout } from "./layouts/PanelLayout";
+import { Auth } from "./pages/auth/Auth";
 
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
-import './App.css'
-import {Auth} from './pages/auth/Auth'
-import { PanelLayout } from './layouts/PanelLayout'
 function App() {
-
-
   return (
     <>
-
-    <BrowserRouter>
-    <Routes>
-<Route path='/' element= {<Auth/>}/>
-<Route path='/panelLayout' element= {<PanelLayout/>}/>
-      
-    </Routes>
-    </BrowserRouter>
-      {/* <Auth /> */}
-      {/* <PanelLayout/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Auth />} />
+          <Route path="/p" element={<PanelLayout/>} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

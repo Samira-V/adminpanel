@@ -1,9 +1,10 @@
-export const SvgUser = (calssName)=>{
-    return(
-       
-<svg className = {calssName}   viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="6" r="4"  stroke-width="1.5"/>
-<path d="M15 20.6151C14.0907 20.8619 13.0736 21 12 21C8.13401 21 5 19.2091 5 17C5 14.7909 8.13401 13 12 13C15.866 13 19 14.7909 19 17C19 17.3453 18.9234 17.6804 18.7795 18"  stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-    )
-}
+export const SvgUser = ({ className }) => {
+  return (
+    <>
+      <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </>
+  );
+};

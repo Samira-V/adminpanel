@@ -1,90 +1,90 @@
-import './Sidebar.css'
-import { useState } from 'react'
-import { SvgLogo } from '../icons/SvgLogo'
-import { SvgPlus } from '../icons/SvgPlus'
-import { menu } from '../constants/layout-const'
-import { ProfileSidebar } from './ProfileSidebar'
-import { ThemeSidebar } from './ThemeSisebar'
-export const Sidebar = ({ handleSidbar }) => {
-    const [subMenu, setSubMenu] = useState(-1)
+import { useState } from "react";
+import { SvgLogo } from "../icons/SvgLogo";
+import { SvgPlus } from "../icons/SvgPlus";
+import "./SideBar.css";
+import { menu } from "../constants/layout-const";
+import { ProfileSideBar } from "./ProfileSideBar";
+import { ThemeSideBar } from "./ThemeSideBar";
+import { SvgClose } from "../icons/SvgClose";
 
+export const SideBar = ({ handleSideBar ,setHandleSideBar }) => {
+  const [activeSubMenu, setActiveSubMenu] = useState(-1);
 
-    const handleSubMenu = (index) => {
-
-        console.log(index)
-        if (subMenu == index) {
-            setSubMenu(-1)
-        }
-        else {
-            setSubMenu(index)
-        }
+  const handelSubMenu = (index) => {
+    if (activeSubMenu == index) {
+      setActiveSubMenu(-1);
+    } else {
+      setActiveSubMenu(index);
     }
+  };
 
-    return (
-        <>
-            <div className={handleSidbar ? "sidebarClose" : "sidebar"}>
-                <div className="sidebar-head">
-                    <h2>samiraCoder</h2>
-                    <SvgLogo></SvgLogo>
-                </div>
-                <div className="sidebar-center">
-                    <button className='sidebar-center-new-project'>
-                        <SvgPlus className="svgPlus" />
-                        <span>پروژه ی جدید</span>
-                    </button>
-                    <ul>
-                        {menu.map((item, index) => (
-                            <li key={index} className={`sidebar-center-item ${subMenu == index && 'sidebar-center-item-active'}`}>
-                                <button onClick={() => handleSubMenu(index)}>
-                                    {item.icon}
-                                    <span> {item.title}</span>
-                                </button>
-                                {item.subMenu &&
-                                    <>
-                                        <SubMenu list={item.subMenu} />
-                                        <SideMenu list={item.subMenu} />
-                                    </>}
-                            </li>
-
-                        ))}
-                    </ul>
-                    {handleSidbar == false &&
-                        <>
-                            <ProfileSidebar />
-                            <ThemeSidebar />
-
-                        </>}
-                </div>
-
-            </div>
-        </>
-    )
-}
-
-export const SubMenu = ({ list }) => {
-    return (
-        <div className='sidebar-center-item-subMenu '>
-            {list.map((item, index) => (
-
-                <div key={index} className="submenu">{item.title}</div>
-            )
-
-            )}
-
+  return (
+    <>
+      <div className={`sideBar ${handleSideBar && "sideBar-handle"}`}>
+        <div className="sideBar-head">
+          <h2>samiraDev</h2>
+          <SvgLogo />
+          <button onClick={() => setHandleSideBar((prev) => !prev)}>
+            <SvgClose/>
+          </button>
         </div>
-    )
-}
-
-export const SideMenu = ({ list }) => {
-    return (
-        <div className='sidebar-center-item-sidemenu '>
-            {list.map((item, index) => (
-
-                <div key={index} className="submenu">{item.title}</div>
-            )
-
-            )}
-
+        <div className="sideBar-center">
+          <button className="sideBar-center-newProject">
+            <SvgPlus />
+            <span>پروژه جدید</span>
+          </button>
+          <ul>
+            {menu.map((item, index) => (
+              <li key={index} className={`sidebar-center-item ${activeSubMenu == index && "sidebar-center-item-active"}`}>
+                <button onClick={() => handelSubMenu(index)}>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </button>
+                {item.submenu && (
+                  <>
+                    <SubMenu submneuData={item.submenu} />
+                    <SideMenu submneuData={item.submenu} />
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-    )
-}
+        {!handleSideBar && (
+          <>
+            <ProfileSideBar />
+            <ThemeSideBar />
+          </>
+        )}
+      </div>
+    </>
+  );
+};
+
+const SubMenu = ({ submneuData }) => {
+  return (
+    <>
+      <div className="sidebar-center-item-submenu">
+        {submneuData.map((item, index) => (
+          <div className="sidebar-center-item-submenu-item" key={index}>
+            {item.title}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+const SideMenu = ({ submneuData }) => {
+  return (
+    <>
+      <div className="sidebar-center-item-sideMenu">
+        {submneuData.map((item, index) => (
+          <div key={index} className="sidebar-center-item-sideMenu-item">
+            {item.title}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
