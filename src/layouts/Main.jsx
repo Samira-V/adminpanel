@@ -1,5 +1,6 @@
 import { MainHeader } from "./MainHeader";
 
+
 export const Main = ({ handleSideBar, setHandleSideBar }) => {
   return (
     <>
