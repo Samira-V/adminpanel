@@ -1,4 +1,5 @@
 import {  useState } from "react";
+import { Link } from "react-router-dom";
 import "./Auth.css";
 import { AnimatedBorder } from "../../components/AnimatedBorder";
 import { SvgLogo } from "../../icons/SvgLogo";
@@ -15,7 +16,9 @@ export const Auth = () => {
       <div className="auth">
         <AnimatedBorder>
           <div className="auth-container">
+            <Link to= "/p">
             <SvgLogo className="auth-container-logo" />
+            </Link>
             <div className="auth-line"></div>
             <div className="auth-switch">
               <button className={`auth-switch-btn ${formType == 'login' && 'auth-switch-btn-active'}`} onClick={()=>setFormType('login')}>ورود</button>
