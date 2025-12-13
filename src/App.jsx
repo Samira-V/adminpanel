@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import './index.css'
+import '/index.css'
 import { PanelLayout } from "./layouts/PanelLayout";
 import { Auth } from "./pages/auth/Auth";
 
