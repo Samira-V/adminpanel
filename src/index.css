@@ -39,6 +39,8 @@ body {
   font-family: 'iranSans';
   direction: rtl;
   overflow-y: scroll;
+    background: red !important;
+
 }
 
 button , input {
