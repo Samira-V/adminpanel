@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./panelLayout.css";
-import { SideBar } from "./SideBar";
-import { Main } from "./Main";
+import "./PanelLayout.css";
+import { SideBar } from "./SideBar.jsx";
+import { Main } from "./Main.jsx";
 export const PanelLayout = () => {
   const [handleSideBar, setHandleSideBar] = useState(false);
   return (
