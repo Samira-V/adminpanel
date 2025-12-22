@@ -2,28 +2,10 @@ import { SvgMenu } from "../icons/SvgMenu";
 import { SvgSearch } from "../icons/SvgSearch";
 import ImgProfile from "../assets/media/profile.jpg";
 import { useState } from "react";
+import { DropDownSetting } from "./DropDownSetting";
 
 export const MainHeader = ({setHandleSideBar}) => {
   const [visibleDrop , setVisibleDrop] = useState(false)
-  const [lang , setLang] = useState('fa')
-  const langList = [
-    {
-      title:'فارسی',
-      symbol:'fa',
-    },
-    {
-      title:'انگلیسی',
-      symbol:'en',
-    },
-    {
-      title:'فرانسوی',
-      symbol:'fr',
-    },
-     {
-      title:'عربی',
-      symbol:'AR',
-    },
-  ]
   return (
     <>
       <div className="main-header">
@@ -48,14 +30,9 @@ export const MainHeader = ({setHandleSideBar}) => {
         </div>
       </div>
 
-      <div onClick={()=>setVisibleDrop(false)} className={`drop-settings-bg ${visibleDrop && 'drop-settings-bg-active' }`}></div>
-      <div className={`drop-setting ${visibleDrop && 'drop-setting-active'}`}>
-        <div className="drop-setting-top">
-         {langList.map((item , index) =>(
-          <button key={index} onClick={()=>setLang(item.symbol)} className={`drop-setting-top-item ${lang === item.symbol && 'drop-setting-top-item-active' }`}>{item.title}</button>
-       ))}
-          </div>
-      </div>
+     <DropDownSetting visibleDrop={visibleDrop} setVisibleDrop={setVisibleDrop} />
+
+      
     </>
   );
 };
