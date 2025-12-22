@@ -8,20 +8,7 @@ export const menu = [
     {
       title: "داشبورد",
       icon: <SvgDashboard className="sideBar-cont-item-svg" />,
-      submenu: [
-        {
-          title: "صفحه اول",
-        },
-        {
-          title: "صفحه دوم",
-        },
-        {
-          title: "صفحه سوم",
-        },
-        {
-          title: "صفحه چهارم",
-        },
-      ],
+      path:'/p/dashboard'
     },
     {
       title: "اپلیکیشن",
@@ -29,7 +16,8 @@ export const menu = [
       submenu: [
        
         {
-          title: "فیگما ",
+          title: "مدیریت اپلیکیشن ",
+          path: '/p/application/manegment'
         },
         {
           title: "فتوشاپ ",
@@ -54,18 +42,11 @@ export const menu = [
     {
       title: "نقشه",
       icon: <SvgWorld className="sideBar-cont-item-svg" />,
+        path:'/map'
     },
     {
       title: "تنظیمات",
       icon: <SvgCog className="sideBar-cont-item-svg" />,
-      submenu: [
-        {
-          title: " روشنایی",
-        },
-        {
-          title: " فونت",
-        },
-      
-      ],
+        path:'/p/setting'
     },
   ];

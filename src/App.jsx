@@ -7,10 +7,13 @@ import {  useState , createContext} from "react";
   
 
 export const ThemeContext = createContext()
+export const PageTitleContext = createContext()
 function App() {
   const [theme , setTheme] = useState('dark')
+  const [pageTitle , setPageTitle] = useState('')
   return (
     <>
+    <PageTitleContext value={{pageTitle , setPageTitle}}>
     <ThemeContext value={{theme , setTheme}}>
       <BrowserRouter>
         <Routes>
@@ -19,6 +22,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       </ThemeContext>
+      </PageTitleContext>
     </>
   );
 }
