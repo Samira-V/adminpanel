@@ -1,11 +1,12 @@
-import { useContext, useEffect } from "react"
-import { PageTitleContext } from "../../App"
+import { useEffect } from "react"
+
+import { useLayoutStore } from "../../store/LayoutStore"
 
 export const ApplicationManegment = () => {
+        const { setTitlePage} = useLayoutStore()
 
-    const ctxTilte = useContext(PageTitleContext)
     useEffect(() => {
-        ctxTilte.setPageTitle('مدیریت اپلیکیشن')
+      setTitlePage ('مدیریت اپلیکیشن')
     }, [])
     return (
         <>

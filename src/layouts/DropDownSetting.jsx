@@ -1,10 +1,11 @@
-import { useContext, useState } from "react"
+import {  useState } from "react"
 import { SvgUser } from "../icons/SvgUser"
 import { SvgLogout } from "../icons/SvgLogout"
-import {ThemeContext} from '../App'
+import { useLayoutStore } from "../store/LayoutStore"
 
 export const DropDownSetting = ({ setVisibleDrop, visibleDrop }) => {
-const ctxTheme = useContext(ThemeContext)
+     const {theme , setTheme} = useLayoutStore()
+
 
   const [lang, setLang] = useState('fa')
   const langList = [
@@ -37,8 +38,8 @@ const ctxTheme = useContext(ThemeContext)
         </div>
 
         <div className="drop-setting-theme">
-          <button onClick={() => { ctxTheme.setTheme('light') }} className={`drop-setting-theme-btn ${ctxTheme.theme === 'light' && 'drop-setting-theme-btn-active'}`}>روشن</button>
-          <button onClick={() => { ctxTheme.setTheme('dark') }} className={`drop-setting-theme-btn ${ctxTheme.theme === 'dark' && 'drop-setting-theme-btn-active'}`}>تاریک</button>
+          <button onClick={() => {setTheme('light') }} className={`drop-setting-theme-btn ${theme === 'light' && 'drop-setting-theme-btn-active'}`}>روشن</button>
+          <button onClick={() => {setTheme('dark') }} className={`drop-setting-theme-btn ${theme === 'dark' && 'drop-setting-theme-btn-active'}`}>تاریک</button>
         </div>
         <div className="drop-setting-bottom">
 

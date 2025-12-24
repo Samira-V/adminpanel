@@ -1,13 +1,13 @@
 import { SvgMenu } from "../icons/SvgMenu";
 import { SvgSearch } from "../icons/SvgSearch";
 import ImgProfile from "../assets/media/profile.jpg";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { DropDownSetting } from "./DropDownSetting";
-import { PageTitleContext } from "../App";
+import { useLayoutStore } from "../store/LayoutStore";
 
 export const MainHeader = ({setHandleSideBar}) => {
   const [visibleDrop , setVisibleDrop] = useState(false)
-  const ctxTilte = useContext(PageTitleContext)
+  const {titlePage} = useLayoutStore()
   return (
     <>
       <div className="main-header">
@@ -15,7 +15,7 @@ export const MainHeader = ({setHandleSideBar}) => {
           <button onClick={() => setHandleSideBar((prev) => !prev)}>
             <SvgMenu />
           </button>
-          <p>{ctxTilte.pageTitle}</p>
+          <p>{titlePage}</p>
         </div>
         <form className="main-header-center">
           <input placeholder="جستجو کنید" />
