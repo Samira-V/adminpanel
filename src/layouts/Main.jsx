@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { MainHeader } from "./MainHeader";
-import { Dashboard } from "../pages/Dashboard";
+import { Dashboard } from "../pages/dashboard/Dashboard";
 import { Settings } from "../pages/Settings";
 import { ApplicationManegment } from "../pages/Application/ApplicationManegment";
 
