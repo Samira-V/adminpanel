@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-
-import { useLayoutStore } from "../store/LayoutStore"
+import './dashboard.css'
+import { useLayoutStore } from "../../store/LayoutStore"
 
 export const Dashboard = () => {
     const { setTitlePage } = useLayoutStore()
@@ -9,7 +9,7 @@ export const Dashboard = () => {
     }, [])
     return (
         <>
-            <h1>dashboard</h1>
+      
         </>
     )
 }

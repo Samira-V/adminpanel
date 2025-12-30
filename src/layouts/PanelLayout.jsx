@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./PanelLayout.css";
-import {SideBar} from './SideBar.jsx';
+
+
 import {Main} from './Main.jsx'
 export const PanelLayout = ({children}) => {
   const [handleSideBar, setHandleSideBar] = useState(false);
