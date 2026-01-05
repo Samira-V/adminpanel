@@ -12,7 +12,9 @@
   position: relative;
   transition: all 0.3s;
 }
-
+.main-cont{
+  padding: 20px;
+}
 .main-inc {
   width: calc(100% - 60px);
   right: 60px;

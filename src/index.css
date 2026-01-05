@@ -39,8 +39,7 @@ body {
   font-family: 'iranSans';
   direction: rtl;
   overflow-y: scroll;
-    background: red !important;
-
+color: var(--color-6);
 }
 
 button , input {

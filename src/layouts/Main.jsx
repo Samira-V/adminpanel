@@ -10,7 +10,7 @@ export const Main = ({ handleSideBar, setHandleSideBar, children }) => {
     <>
       <main className={`main ${handleSideBar && "main-inc"}`}>
         <MainHeader setHandleSideBar={setHandleSideBar} />
-        <div  style={{ height: '600px', color: '#fff' }}>
+        <div  className="main-cont" >
           {children}
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
