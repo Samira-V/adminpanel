@@ -4,6 +4,7 @@ import { useLayoutStore } from "../../store/LayoutStore"
 import { DashboardSummery } from "./_components/DashboardSummery"
 import { DashboardChart } from "./_components/DashboardChart"
 import { DashboardOrder } from "./_components/DashboardOrder"
+import { DashboardBlog } from "./_components/DashboardBlog"
 
 export const Dashboard = () => {
     const { setTitlePage } = useLayoutStore()
@@ -20,7 +21,7 @@ export const Dashboard = () => {
                 <DashboardOrder/>
             </div>
         </div>
-        <div className="dash-left"></div>
+        <DashboardBlog/>
       </div>
         </>
     )

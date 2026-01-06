@@ -11,7 +11,7 @@ export const DashboardOrder = ()=>{
                             <span>12 اردیبهشت</span>
                         </div>
                     </div>
-                    <div className="dash-right-bottom-order-item-left">{item.profit}</div>
+                    <div className="dash-right-bottom-order-item-left">${item.profit}</div>
                 </div>
             ))}
         </div>
@@ -22,27 +22,33 @@ export const DashboardOrder = ()=>{
 
 let fakeData = [
     {
-        img:'../assets/media/profile.jpg',
+        img:'https://image.shutterstock.com/image-photo/portrai…ful-naturally-brunette-woman-260nw-2140510533.jpg',
         name:'سارا حبیبی',
         profit:44.55,
 
     },
      {
-        img:'https://www.freepik.com/free-photo/handsome-stylish-young-guy-with-glasses-posing-with-his-phone_10728864.htm#fromView=keyword&page=1&position=3&uuid=a0f2fe0e-0769-4bb0-bffe-a6804354b6cf&query=User+man',
+        img:'https://freerangestock.com/sample/171369/a-man-sitting-on-a-couch.jpg',
         name:'حامد اتش زر ',
         profit:23.20,
 
     },
      {
-        img:'https://unsplash.com/photos/man-in-black-full-zip-jacket-using-smartphone-7zcbtbI4E2o',
+        img:'https://freerangestock.com/thumbnail/164488/a-man-in-a-suit.jpg',
         name:'ارسان ساعی ',
         profit:54.25,
 
     },
      {
-        img:'./assets/media/team/2.jpg',
+        img:'https://freerangestock.com/thumbnail/149089/headshot-smiling-asian-executive.jpg',
         name:'علی محمدی',
         profit:14.25,
+
+    },
+        {
+        img:'https://freerangestock.com/thumbnail/130115/young-smiling-girl--looking-at-camera-.jpg',
+        name:'سونیا رسولی',
+        profit:44.55,
 
     },
 ]

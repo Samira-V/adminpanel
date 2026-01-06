@@ -10,10 +10,10 @@ src: url('/fonts/IRANSans.woff') format('woff');
 }
 
 :root {
-  --color-1:#05050c ;
-  --color-2:#0f1021 ;
+  --color-1:#111111;
+  --color-2:#1a1a1a ;
   --color-3:#bff474 ;
-  --color-4:#242534 ;
+  --color-4:#242424 ;
   --color-5:#6a6d9e ;
   --color-6:#fff ;
   --color-7:#b0b0b1 ;
