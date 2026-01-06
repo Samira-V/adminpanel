@@ -98,7 +98,7 @@
     color: var(--color-6);
     padding-inline-start: 10px;
     &::placeholder {
-        color: var(--color-5);
+        color: var(--color-7);
     }
 }
 
@@ -115,7 +115,7 @@
 }
 
 .auth-form label div svg {
-    stroke: var(--color-5);
+    stroke: var(--color-7);
     width: 30px;
 }
 
